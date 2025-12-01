@@ -1,2 +1,305 @@
-# magicmirror-home-dashcalendar
-A warm, home-friendly MagicMirror² dashboard with calendar, weather, wallpaper slideshow, optional presence control, and guided setup script.
+# 🌙 MagicMirror Home DashCalendar  
+*A warm, home-friendly MagicMirror² dashboard with guided setup, theming, and automation.*
+
+![banner](placeholder)  
+*(need to put a screenshot here)*
+
+---
+
+## ✨ Overview
+
+**MagicMirror Home DashCalendar** is a curated MagicMirror² setup bundle designed for cozy home environments.  
+It includes:
+
+- 📅 A nice Monthly Calendar (current month or rolling 4 weeks)  
+- 🌤️ Weather & forecast via OpenWeather OneCall API  
+- 🖼️ Photo frame style slideshow (MMM-Wallpaper)  
+- 🕒 Easy to read clock design 
+- 👁️ Optional PIR / MQTT presence-based screen control  
+- 🚗 Optional commute module (MMM-Traffic)  
+- 🏠 Optional Home Assistant integration  
+- 🎨 Theme engine (Purple, Blue, Teal, Green, Red, Grey)  
+- 🧩 Guided setup script that generates config.js + custom.css  
+- 💡 Warm, living-room-friendly dark styling  
+
+This is **not** a single MagicMirror module.  
+It is a **complete setup toolkit** that installs modules, configures your mirror, applies a theme, and writes:
+
+```
+~/MagicMirror/config/config.js
+~/MagicMirror/css/custom.css
+```
+
+All based on your answers during setup.
+
+You *need* to have MagicMirror installed already on your device. You can find that at the official repo [here](https://github.com/MagicMirrorOrg/MagicMirror), or use sdetweil's install script found [here](https://github.com/sdetweil/MagicMirror_scripts) (thanks, sdetweil!)
+
+I installed MagicMirror on my Raspberry Pi 3b+ in my use case. A side note, the 3b+ requires you to use Raspberry Pi OS Bullseye due to some WiFi bug as of the time I wrote this. You do need the desktop version, Lite will not work. I'm not sure if the 4 or 5 run into this WiFi issue, however. YMMV.
+
+---
+
+## 🗂️ Included Modules
+
+The scripted installer automatically installs & configures:
+
+- **MMM-MonthlyCalendar** – Clean monthly/4-week calendar  
+- **MMM-OneCallWeather** – Weather & forecast  
+- **MMM-Wallpaper** – Photos / artwork slideshow  
+- **MMM-Remote-Control** – Remote browser UI / API  
+- **MMM-Traffic** (optional) – Travel time  
+- **MMM-PresenceScreenControl** (optional) – PIR / MQTT / CEC / xrandr automation  
+- **MMM-HomeAssistant** (optional) – HA through MQTT autodiscovery  
+
+---
+
+## 🎨 Themes Included
+
+You can select a theme during setup:
+
+| Number | Theme |
+|--------|--------|
+| 1 | Purple (default) |
+| 2 | Blue |
+| 3 | Teal |
+| 4 | Green |
+| 5 | Red |
+| 6 | Grey |
+
+All themes use a warm-toned dark base so the mirror blends beautifully with indoor lighting (2700–3000K).
+
+---
+
+## 🚀 Quick Install (Recommended)
+
+Run this on your Raspberry Pi (with MagicMirror installed at `~/MagicMirror`):
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/unnusl/magicmirror-home-dashcalendar/main/install.sh)
+```
+
+This will:
+
+- Clone/update the repo  
+- Install all required MagicMirror modules  
+- Ask you setup questions  
+- Build your theme  
+- Generate `config.js` and `custom.css`  
+
+Then start MagicMirror:
+
+```bash
+cd ~/MagicMirror
+npm start
+```
+
+---
+
+## 🛠️ Manual Install (Alternative)
+
+```bash
+cd ~
+git clone https://github.com/unnusl/magicmirror-home-dashcalendar.git
+cd magicmirror-home-dashcalendar
+chmod +x setup-mirror.sh
+./setup-mirror.sh
+```
+
+---
+
+## ❓ What the Setup Script Asks You
+
+### 1. Theme Selection  
+Choose from 6 included warm dark-mode themes.
+
+---
+
+### 2. Presence Mode  
+Choose:
+
+1. **PIR only**  
+2. **PIR + MQTT**  
+3. **No sensor (always on)** ← beginner-friendly default
+
+If a presence mode is enabled, you'll also configure:
+
+- HDMI-CEC / xrandr / none  
+- Optional xscreensaver integration  
+- Timeout (seconds before screen off / saver)
+
+---
+
+### 3. Optional Modules  
+
+Toggle these:
+
+- **MMM-Traffic**
+- **MMM-HomeAssistant**
+
+---
+
+### 4. Weather Inputs  
+
+Enter:
+
+- Latitude  
+- Longitude  
+- OpenWeather API key  
+
+---
+
+### 5. Calendars  
+
+Add 1–3 calendar URLs:
+
+- iCloud shared calendar links  
+- Google Calendar private ICS links  
+- Any webcal/https source  
+
+Choose calendar mode:
+
+- **Current month (default)**  
+- **Rolling 4 weeks**
+
+---
+
+### 6. Wallpaper (MMM-Wallpaper)
+
+Choose from 17+ sources:
+
+- iCloud shared album  
+- Bing daily  
+- Local folder  
+- Reddit (subreddits / multireddits)  
+- FireTV / Chromecast  
+- NASA APOD / HD / NASA image search  
+- Flickr API  
+- MetMuseum art  
+- Lightroom album  
+- Synology Moments  
+- URL  
+- Custom string  
+- Google Photos **via local sync folder** (recommended workaround)
+
+Also set the slide interval (default 15 seconds).
+
+---
+
+### 7. Optional Traffic Module
+
+If enabled:
+
+- Mapbox token  
+- Origin coords  
+- Destination coords  
+- Destination label  
+
+---
+
+## 📁 File Outputs
+
+After the script finishes:
+
+```
+~/MagicMirror/config/config.js       ← fully generated
+~/MagicMirror/css/custom.css         ← your chosen theme
+```
+
+Old configs are automatically backed up:
+
+```
+config.js.bak.<timestamp>
+```
+
+---
+
+## 📸 Screenshots (need to add)
+
+i need to add screenshots here...
+
+```
+![screenshot-name](images/screenshot.png)
+```
+
+---
+
+## 🧱 Folder Structure
+
+```
+magicmirror-home-dashcalendar/
+├─ install.sh
+├─ setup-mirror.sh
+├─ config.template.js
+├─ themes/
+│  └─ custom.css.template
+├─ .gitignore
+└─ README.md
+```
+
+---
+
+## 🔄 Updating / Re-running
+
+If you update the repo on GitHub and want to re-run the installer:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/unnusl/magicmirror-home-dashcalendar/main/install.sh)
+```
+
+It will:
+
+- Pull latest changes  
+- Re-run the guided setup  
+- Regenerate config & CSS  
+
+---
+
+## 🐛 Troubleshooting
+
+### MagicMirror doesn't start?
+
+Check logs:
+
+```bash
+cd ~/MagicMirror
+npm start
+```
+
+Or with pm2:
+
+```bash
+pm2 logs MagicMirror
+```
+
+---
+
+## 🧩 Contributing
+
+Pull requests welcome!  
+Good opportunities:
+
+- New themes  
+- Additional wallpaper presets  
+- More module compatibility  
+- Better layout responsiveness  
+- Presence / screen automation improvements  
+
+---
+
+## 📜 License: MIT
+
+This project is released under the MIT License, meaning:
+
+- Free to use  
+- Free to modify  
+- Free to redistribute  
+- Credit required  
+- No liability  
+
+Ideal for MagicMirror community projects.
+
+---
+
+## ❤️ Enjoy Your Home Dashboard
+
+This project was designed to feel **warm, cozy, and home-friendly**, not sterile.  
+If you make cool customizations, submit a PR or share screenshots!
