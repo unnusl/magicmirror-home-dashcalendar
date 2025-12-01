@@ -133,6 +133,9 @@ If a presence mode is enabled, you'll also configure:
 Toggle these:
 
 - **MMM-Traffic**
+  - It will ask you in the format Long,Lat rather than Lat,Long -- for example: -117.918985,33.812136 for Disneyland.
+    - If you need to get your coordinates, you can get those by right clicking on your location in Google Maps. Remember, Maps will display them in LAT,LONG. This module requires the inverse.
+  - It will also require an API Key from MapBox. Instructions can be found at the [MMM-Traffic repo](https://github.com/saml-dev/MMM-Traffic?tab=readme-ov-file#mapbox-access-token).
 - **MMM-HomeAssistant**
 
 ---
@@ -141,9 +144,11 @@ Toggle these:
 
 Enter:
 
-- Latitude  
-- Longitude  
-- OpenWeather API key  
+- Latitude  (eg Disneyland is 33.812136)
+  - Coordinates can be found on Google Maps if you right click on your location.
+- Longitude  (eg Disneyland is -117.918985)
+- OpenWeather API key
+  - Free tier is fine, you will not be querying nearly as much as the limit. You can get that [here](https://openweathermap.org/api)
 
 ---
 
