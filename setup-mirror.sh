@@ -83,18 +83,95 @@ install_modules() {
 }
 
 # ----------------------------------------------------------
-# Theme selection (warm dark base + accent)
+# Theme selection (warm dark base + accent via CSS variables)
 # ----------------------------------------------------------
- choose_theme() {
+choose_theme() {
   echo
-  echo "=== Theme selection ==="
-  echo "For now, the default purple glass theme will be used."
-  echo "(Additional color themes can be added in a future version.)"
+  echo "=== Choose a theme ==="
+  echo "1) Purple (default)"
+  echo "2) Blue"
+  echo "3) Teal"
+  echo "4) Green"
+  echo "5) Red"
+  echo "6) Grey"
+  echo "7) Amber / Gold"
+  read -rp "Theme number [1-7]: " THEME_CHOICE
+
+  # Default: Purple (matches your current look)
+  ACCENT_STRONG="#c4b5fd"
+  ACCENT_SOFT="rgba(124, 58, 237, 0.40)"
+  ACCENT_BORDER="rgba(216, 180, 254, 0.70)"
+  ACCENT_GLOW="rgba(196, 181, 253, 0.95)"
+  ACCENT_TODAY="radial-gradient(circle at top, rgba(196, 181, 253, 0.22), rgba(129, 140, 248, 0.40))"
+  ACCENT_TODAY_GLOW="rgba(196, 181, 253, 0.95)"
+
+  case "$THEME_CHOICE" in
+    2)
+      # Blue
+      ACCENT_STRONG="#93c5fd"
+      ACCENT_SOFT="rgba(59, 130, 246, 0.35)"
+      ACCENT_BORDER="rgba(191, 219, 254, 0.70)"
+      ACCENT_GLOW="rgba(147, 197, 253, 0.90)"
+      ACCENT_TODAY="radial-gradient(circle at top, rgba(147, 197, 253, 0.24), rgba(59, 130, 246, 0.40))"
+      ACCENT_TODAY_GLOW="rgba(147, 197, 253, 0.90)"
+      ;;
+    3)
+      # Teal
+      ACCENT_STRONG="#5eead4"
+      ACCENT_SOFT="rgba(45, 212, 191, 0.32)"
+      ACCENT_BORDER="rgba(153, 246, 228, 0.70)"
+      ACCENT_GLOW="rgba(45, 212, 191, 0.90)"
+      ACCENT_TODAY="radial-gradient(circle at top, rgba(153, 246, 228, 0.24), rgba(45, 212, 191, 0.40))"
+      ACCENT_TODAY_GLOW="rgba(45, 212, 191, 0.90)"
+      ;;
+    4)
+      # Green
+      ACCENT_STRONG="#6ee7b7"
+      ACCENT_SOFT="rgba(16, 185, 129, 0.32)"
+      ACCENT_BORDER="rgba(167, 243, 208, 0.70)"
+      ACCENT_GLOW="rgba(52, 211, 153, 0.90)"
+      ACCENT_TODAY="radial-gradient(circle at top, rgba(167, 243, 208, 0.24), rgba(16, 185, 129, 0.40))"
+      ACCENT_TODAY_GLOW="rgba(52, 211, 153, 0.90)"
+      ;;
+    5)
+      # Red
+      ACCENT_STRONG="#fecaca"
+      ACCENT_SOFT="rgba(239, 68, 68, 0.32)"
+      ACCENT_BORDER="rgba(254, 202, 202, 0.70)"
+      ACCENT_GLOW="rgba(248, 113, 113, 0.90)"
+      ACCENT_TODAY="radial-gradient(circle at top, rgba(254, 202, 202, 0.24), rgba(239, 68, 68, 0.40))"
+      ACCENT_TODAY_GLOW="rgba(248, 113, 113, 0.90)"
+      ;;
+    6)
+      # Grey
+      ACCENT_STRONG="#e5e7eb"
+      ACCENT_SOFT="rgba(55, 65, 81, 0.40)"
+      ACCENT_BORDER="rgba(156, 163, 175, 0.70)"
+      ACCENT_GLOW="rgba(107, 114, 128, 0.90)"
+      ACCENT_TODAY="radial-gradient(circle at top, rgba(156, 163, 175, 0.24), rgba(55, 65, 81, 0.40))"
+      ACCENT_TODAY_GLOW="rgba(156, 163, 175, 0.90)"
+      ;;
+    7)
+      # Amber / Gold (warm Edison-style)
+      ACCENT_STRONG="#fbbf24"
+      ACCENT_SOFT="rgba(251, 191, 36, 0.30)"
+      ACCENT_BORDER="rgba(252, 211, 77, 0.70)"
+      ACCENT_GLOW="rgba(251, 191, 36, 0.90)"
+      ACCENT_TODAY="radial-gradient(circle at top, rgba(252, 211, 77, 0.24), rgba(251, 191, 36, 0.40))"
+      ACCENT_TODAY_GLOW="rgba(251, 191, 36, 0.90)"
+      ;;
+    *)
+      # Default: keep purple
+      ;;
+  esac
+
+  export ACCENT_STRONG ACCENT_SOFT ACCENT_BORDER ACCENT_GLOW ACCENT_TODAY ACCENT_TODAY_GLOW
 
   mkdir -p "${MM_DIR}/css"
-  cp "$CSS_TEMPLATE" "${MM_DIR}/css/custom.css"
-  echo "→ Copied CSS template to ${MM_DIR}/css/custom.css"
+  envsubst < "$CSS_TEMPLATE" > "${MM_DIR}/css/custom.css"
+  echo "→ Wrote themed CSS to ${MM_DIR}/css/custom.css"
 }
+
 
 # ----------------------------------------------------------
 # Presence & screen control configuration
