@@ -85,7 +85,6 @@ install_modules() {
 # ----------------------------------------------------------
 # Theme selection (warm dark base + accent)
 # ----------------------------------------------------------
-choose_theme() {
  choose_theme() {
   echo
   echo "=== Theme selection ==="
