@@ -13,6 +13,8 @@
   --bg-top: ${BG_TOP};
   --bg-mid: ${BG_MID};
   --bg-bottom: ${BG_BOTTOM};
+
+  --panel-base: ${PANEL_BASE};
 }
 
 
@@ -164,7 +166,7 @@ body {
   margin-top: 12px;
   padding: 12px 16px;
   border-radius: 18px;
-  background: rgba(15, 23, 42, 0.9);
+  background: var(--panel-base);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
 }
 
@@ -205,13 +207,13 @@ body {
 .MMM-MonthlyCalendar .monthview {
   background: radial-gradient(circle at top left,
               var(--accent-soft),
-              rgba(24, 18, 40, 0.98));
+              var(--panel-base));
   border-radius: 24px;
   padding: 18px 24px;
   border: 1px solid var(--accent-border);
   box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.85),
-    0 0 0 1px rgba(15, 23, 42, 0.8);
+    0 0 0 1px var(--panel-base);
   backdrop-filter: blur(18px);
 }
 
@@ -244,7 +246,7 @@ body {
   border-radius: 18px;
   box-shadow:
     0 0 0 1px var(--accent-today-glow),
-    0 12px 28px rgba(15, 23, 42, 0.9);
+    0 12px 28px var(--panel-base);
 }
 
 /* Traffic card (glassy) */
@@ -254,7 +256,7 @@ body {
   padding: 14px 18px;
   border-radius: 20px;
   background: linear-gradient(135deg,
-              rgba(24, 18, 40, 0.96),
+              var(--panel-base),
               var(--accent-soft));
   border: 1px solid var(--accent-border);
   box-shadow: 0 20px 46px rgba(0, 0, 0, 0.85);
@@ -299,7 +301,7 @@ body {
   max-height: 350px;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(15, 23, 42, 0.9);
+  background: var(--panel-base);
 }
 
 .MMM-Wallpaper img,
