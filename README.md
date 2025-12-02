@@ -67,6 +67,7 @@ You can select a theme during setup:
 | 4 | Green |
 | 5 | Red |
 | 6 | Grey |
+| 7 | Amber/Gold |
 
 All themes are generally a dark-mode style with accent colors that aim to model how modern smartphones are.
 
