@@ -166,7 +166,7 @@ let config = {
         width: "350px",
         height: "350px"
       }
-    },
+    }
 
     /**********************************************************
      * Optional modules (injected by setup script)
