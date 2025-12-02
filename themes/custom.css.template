@@ -8,7 +8,13 @@
   --accent-glow: ${ACCENT_GLOW};
   --accent-today-bg: ${ACCENT_TODAY};
   --accent-today-glow: ${ACCENT_TODAY_GLOW};
+
+  /* Theme background gradient (top → mid → bottom) */
+  --bg-top: ${BG_TOP};
+  --bg-mid: ${BG_MID};
+  --bg-bottom: ${BG_BOTTOM};
 }
+
 
 /* Base global styles & layout */
 
@@ -187,9 +193,9 @@ body {
   box-sizing: border-box;
 
   background: radial-gradient(circle at top left,
-              #1a1030 0,
-              #050214 45%,
-              #020010 100%);
+              var(--bg-top) 0,
+              var(--bg-mid) 45%,
+              var(--bg-bottom) 100%);
   color: #e5e7eb;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
