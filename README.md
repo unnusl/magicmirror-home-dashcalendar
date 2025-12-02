@@ -1,8 +1,7 @@
 # 🌙 MagicMirror Home DashCalendar  
 *A warm, home-friendly MagicMirror² - intended to be a home calendar like many we see on the market*
 
-![banner](placeholder)  
-*(need to put a screenshot here)*
+![banner](images/main-screen-example.png?raw=true)
 
 ---
 
@@ -59,15 +58,15 @@ The scripted installer automatically installs & configures:
 
 You can select a theme during setup:
 
-| Number | Theme |
-|--------|--------|
-| 1 | Purple (default) |
-| 2 | Blue |
-| 3 | Teal |
-| 4 | Green |
-| 5 | Red |
-| 6 | Grey |
-| 7 | Amber/Gold |
+| Number | Theme | Preview |
+|--------|--------|--------|
+| 1 | Purple (default) |<img src="images/purple.png" width="200">|
+| 2 | Blue |<img src="images/blue.png" width="200">|
+| 3 | Teal |<img src="images/teal.png" width="200">|
+| 4 | Green |<img src="images/green.png" width="200">|
+| 5 | Red |<img src="images/red.png" width="200">|
+| 6 | Grey |<img src="images/grey.png" width="200">|
+| 7 | Amber/Gold |<img src="images/gold.png" width="200">|
 
 All themes are generally a dark-mode style with accent colors that aim to model how modern smartphones are.
 
@@ -218,16 +217,6 @@ Old configs are automatically backed up:
 
 ```
 config.js.bak.<timestamp>
-```
-
----
-
-## 📸 Screenshots (need to add)
-
-i need to add screenshots here...
-
-```
-![screenshot-name](images/screenshot.png)
 ```
 
 ---
