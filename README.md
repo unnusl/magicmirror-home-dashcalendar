@@ -49,7 +49,7 @@ The scripted installer automatically installs & configures:
 - **MMM-OneCallWeather** – Weather & forecast  
 - **MMM-Wallpaper** – Photos / artwork slideshow  
 - **MMM-Remote-Control** – Remote browser UI / API  
-- **MMM-Traffic** (optional) – Travel time  
+- **MMM-Traffic** - Travel time  
 - **MMM-PresenceScreenControl** (optional) – PIR / MQTT / CEC / xrandr automation  
 - **MMM-HomeAssistant** (optional) – HA through MQTT autodiscovery  
 
@@ -68,11 +68,11 @@ You can select a theme during setup:
 | 5 | Red |
 | 6 | Grey |
 
-All themes use a warm-toned dark base so the mirror blends beautifully with indoor lighting (2700–3000K).
+All themes are generally a dark-mode style with accent colors that aim to model how modern smartphones are.
 
 ---
 
-## 🚀 Quick Install (Recommended)
+## 🚀 Quick Install (easy mode)
 
 Run this on your Raspberry Pi (with MagicMirror installed at `~/MagicMirror`):
 
@@ -97,7 +97,7 @@ npm start
 
 ---
 
-## 🛠️ Manual Install (Alternative)
+## 🛠️ Manual Install (advanced)
 
 ```bash
 cd ~
@@ -112,26 +112,26 @@ chmod +x setup-mirror.sh
 ## ❓ What the Setup Script Asks You
 
 ### 1. Theme Selection  
-Choose from 6 included warm dark-mode themes.
+Choose from the included color schemes (purple is my favorite and is the default).
 
 ---
 
 ### 2. Presence Mode  
 Choose:
 
-1. **PIR only**  
-2. **PIR + MQTT**  
-3. **No sensor (always on)** ← beginner-friendly default
+1. **PIR only** (intended for using an IR sensor plugged into a Raspberry Pi's built in GPIO pins)
+2. **PIR + MQTT**  (lets you combine onboard PIR motion detection with more advanced automation via MQTT)
+3. **No sensor (always on)** (if you want to keep the screen on all the time)
 
 If a presence mode is enabled, you'll also configure:
 
-- HDMI-CEC / xrandr / none  
-- Optional xscreensaver integration  
+- HDMI-CEC / xrandr / none  (how to control timeout, whether CEC command or just turning the output on HDMI off, etc)
+- Optional xscreensaver integration  (I love xscreensaver with the Cloud Life screensaver)
 - Timeout (seconds before screen off / saver)
 
 ---
 
-### 3. Optional Modules  
+### 3. Other Modules  
 
 Toggle these:
 
@@ -140,6 +140,7 @@ Toggle these:
     - If you need to get your coordinates, you can get those by right clicking on your location in Google Maps. Remember, Maps will display them in LAT,LONG. This module requires the inverse.
   - It will also require an API Key from MapBox. Instructions can be found at the [MMM-Traffic repo](https://github.com/saml-dev/MMM-Traffic?tab=readme-ov-file#mapbox-access-token).
 - **MMM-HomeAssistant**
+  - This will help you get advanced controls via HomeAssistant 
 
 ---
 
