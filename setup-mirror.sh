@@ -122,12 +122,12 @@ choose_theme() {
       ACCENT_TODAY_GLOW="rgba(147, 197, 253, 0.90)"
       PANEL_BASE="rgba(20, 24, 35, 0.96)"
 
-      BG_TOP="#111827"
-      BG_MID="#060716"
-      BG_BOTTOM="#02000b"
+      BG_TOP="#162647"
+      BG_MID="#0c0f15"
+      BG_BOTTOM="#040406"
       ;;
     3)
-      # Teal (still warmish)
+      # Teal
       ACCENT_STRONG="#5eead4"
       ACCENT_SOFT="rgba(45, 212, 191, 0.32)"
       ACCENT_BORDER="rgba(153, 246, 228, 0.70)"
@@ -137,11 +137,11 @@ choose_theme() {
       PANEL_BASE="rgba(18, 30, 28, 0.96)"
 
       BG_TOP="#052e24"
-      BG_MID="#050716"
-      BG_BOTTOM="#02000b"
+      BG_MID="#0b1513"
+      BG_BOTTOM="#070807"
       ;;
     4)
-      # Green (warm forest)
+      # Green
       ACCENT_STRONG="#6ee7b7"
       ACCENT_SOFT="rgba(16, 185, 129, 0.32)"
       ACCENT_BORDER="rgba(167, 243, 208, 0.70)"
@@ -150,12 +150,12 @@ choose_theme() {
       ACCENT_TODAY_GLOW="rgba(52, 211, 153, 0.90)"
       PANEL_BASE="rgba(22, 32, 22, 0.96)"
 
-      BG_TOP="#064e3b"
-      BG_MID="#050716"
-      BG_BOTTOM="#02000b"
+      BG_TOP="#064f0d"
+      BG_MID="#18361b"
+      BG_BOTTOM="#1b251c"
       ;;
     5)
-      # Red (warm wine)
+      # Red
       ACCENT_STRONG="#fecaca"
       ACCENT_SOFT="rgba(239, 68, 68, 0.32)"
       ACCENT_BORDER="rgba(254, 202, 202, 0.70)"
@@ -165,11 +165,11 @@ choose_theme() {
       PANEL_BASE="rgba(38, 18, 22, 0.96)"
 
       BG_TOP="#3b0f19"
-      BG_MID="#120714"
-      BG_BOTTOM="#05000a"
+      BG_MID="#1d080d"
+      BG_BOTTOM="#211417"
       ;;
     6)
-      # Grey (neutral but gently warm)
+      # Grey
       ACCENT_STRONG="#e5e7eb"
       ACCENT_SOFT="rgba(55, 65, 81, 0.40)"
       ACCENT_BORDER="rgba(156, 163, 175, 0.70)"
@@ -178,12 +178,12 @@ choose_theme() {
       ACCENT_TODAY_GLOW="rgba(156, 163, 175, 0.90)"
       PANEL_BASE="rgba(28, 28, 30, 0.96)"
 
-      BG_TOP="#111827"
-      BG_MID="#060716"
-      BG_BOTTOM="#02000b"
+      BG_TOP="#131313"
+      BG_MID="#080808"
+      BG_BOTTOM="#0a0a0a"
       ;;
     7)
-      # Amber / Gold (warm Edison-style)
+      # Amber / Gold
       ACCENT_STRONG="#fbbf24"
       ACCENT_SOFT="rgba(251, 191, 36, 0.30)"
       ACCENT_BORDER="rgba(252, 211, 77, 0.70)"
@@ -193,8 +193,8 @@ choose_theme() {
       PANEL_BASE="rgba(36, 26, 12, 0.96)"
 
       BG_TOP="#311802"
-      BG_MID="#120714"
-      BG_BOTTOM="#05000a"
+      BG_MID="#0d0b09"
+      BG_BOTTOM="#0a0908"
       ;;
     *)
       # Default: keep purple (BG_* already set above)
