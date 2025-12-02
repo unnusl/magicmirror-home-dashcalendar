@@ -105,51 +105,76 @@ choose_theme() {
   ACCENT_TODAY="radial-gradient(circle at top, rgba(196, 181, 253, 0.22), rgba(129, 140, 248, 0.40))"
   ACCENT_TODAY_GLOW="rgba(196, 181, 253, 0.95)"
 
+  # Purple background gradient (top → mid → bottom)
+  BG_TOP="#1a1030"
+  BG_MID="#050214"
+  BG_BOTTOM="#020010"
+
   case "$THEME_CHOICE" in
     2)
-      # Blue
+      # Blue (warm-leaning)
       ACCENT_STRONG="#93c5fd"
       ACCENT_SOFT="rgba(59, 130, 246, 0.35)"
       ACCENT_BORDER="rgba(191, 219, 254, 0.70)"
       ACCENT_GLOW="rgba(147, 197, 253, 0.90)"
       ACCENT_TODAY="radial-gradient(circle at top, rgba(147, 197, 253, 0.24), rgba(59, 130, 246, 0.40))"
       ACCENT_TODAY_GLOW="rgba(147, 197, 253, 0.90)"
+
+      BG_TOP="#111827"
+      BG_MID="#060716"
+      BG_BOTTOM="#02000b"
       ;;
     3)
-      # Teal
+      # Teal (still warmish)
       ACCENT_STRONG="#5eead4"
       ACCENT_SOFT="rgba(45, 212, 191, 0.32)"
       ACCENT_BORDER="rgba(153, 246, 228, 0.70)"
       ACCENT_GLOW="rgba(45, 212, 191, 0.90)"
       ACCENT_TODAY="radial-gradient(circle at top, rgba(153, 246, 228, 0.24), rgba(45, 212, 191, 0.40))"
       ACCENT_TODAY_GLOW="rgba(45, 212, 191, 0.90)"
+
+      BG_TOP="#052e24"
+      BG_MID="#050716"
+      BG_BOTTOM="#02000b"
       ;;
     4)
-      # Green
+      # Green (warm forest)
       ACCENT_STRONG="#6ee7b7"
       ACCENT_SOFT="rgba(16, 185, 129, 0.32)"
       ACCENT_BORDER="rgba(167, 243, 208, 0.70)"
       ACCENT_GLOW="rgba(52, 211, 153, 0.90)"
       ACCENT_TODAY="radial-gradient(circle at top, rgba(167, 243, 208, 0.24), rgba(16, 185, 129, 0.40))"
       ACCENT_TODAY_GLOW="rgba(52, 211, 153, 0.90)"
+
+      BG_TOP="#064e3b"
+      BG_MID="#050716"
+      BG_BOTTOM="#02000b"
       ;;
     5)
-      # Red
+      # Red (warm wine)
       ACCENT_STRONG="#fecaca"
       ACCENT_SOFT="rgba(239, 68, 68, 0.32)"
       ACCENT_BORDER="rgba(254, 202, 202, 0.70)"
       ACCENT_GLOW="rgba(248, 113, 113, 0.90)"
       ACCENT_TODAY="radial-gradient(circle at top, rgba(254, 202, 202, 0.24), rgba(239, 68, 68, 0.40))"
       ACCENT_TODAY_GLOW="rgba(248, 113, 113, 0.90)"
+
+      BG_TOP="#3b0f19"
+      BG_MID="#120714"
+      BG_BOTTOM="#05000a"
       ;;
     6)
-      # Grey
+      # Grey (neutral but gently warm)
       ACCENT_STRONG="#e5e7eb"
       ACCENT_SOFT="rgba(55, 65, 81, 0.40)"
       ACCENT_BORDER="rgba(156, 163, 175, 0.70)"
       ACCENT_GLOW="rgba(107, 114, 128, 0.90)"
       ACCENT_TODAY="radial-gradient(circle at top, rgba(156, 163, 175, 0.24), rgba(55, 65, 81, 0.40))"
       ACCENT_TODAY_GLOW="rgba(156, 163, 175, 0.90)"
+
+      BG_TOP="#111827"
+      BG_MID="#060716"
+      BG_BOTTOM="#02000b"
       ;;
     7)
       # Amber / Gold (warm Edison-style)
@@ -159,18 +184,24 @@ choose_theme() {
       ACCENT_GLOW="rgba(251, 191, 36, 0.90)"
       ACCENT_TODAY="radial-gradient(circle at top, rgba(252, 211, 77, 0.24), rgba(251, 191, 36, 0.40))"
       ACCENT_TODAY_GLOW="rgba(251, 191, 36, 0.90)"
+
+      BG_TOP="#311802"
+      BG_MID="#120714"
+      BG_BOTTOM="#05000a"
       ;;
     *)
-      # Default: keep purple
+      # Default: keep purple (BG_* already set above)
       ;;
   esac
 
   export ACCENT_STRONG ACCENT_SOFT ACCENT_BORDER ACCENT_GLOW ACCENT_TODAY ACCENT_TODAY_GLOW
+  export BG_TOP BG_MID BG_BOTTOM
 
   mkdir -p "${MM_DIR}/css"
   envsubst < "$CSS_TEMPLATE" > "${MM_DIR}/css/custom.css"
   echo "→ Wrote themed CSS to ${MM_DIR}/css/custom.css"
 }
+
 
 
 # ----------------------------------------------------------
